@@ -1,7 +1,6 @@
 package managers;
  
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,8 +17,8 @@ public class WebDriverManager {
 	private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
  
 	public WebDriverManager() {
-		//driverType = FileReaderManager.getInstance().getConfigReader();
-		//environmentType = FileReaderManager.getInstance().getConfigReader().getEnvironment();
+		driverType = FileReaderManager.getInstance().getConfigReader().getBrowser();
+		environmentType = FileReaderManager.getInstance().getConfigReader().getEnvironment();
 	}
  
 	public WebDriver getDriver() {
