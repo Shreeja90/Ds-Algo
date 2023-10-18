@@ -13,7 +13,7 @@ import enums.EnvironmentType;
 public class ConfigFileReader {
 	
 	private Properties properties;
-	private final String propertyFilePath= "/Dsalgo/src/test/java/BDD_Framework/config/Configuration.properties";
+	private final String propertyFilePath= "/Users/shreeeja/eclipse-workspace/Dsalgo/src/test/java/BDD_Framework/config/Configuration.properties";
 
 	
 	public ConfigFileReader(){
@@ -56,6 +56,7 @@ public class ConfigFileReader {
 		if(browserName == null || browserName.equals("chrome")) return DriverType.CHROME;
 		else if(browserName.equalsIgnoreCase("firefox")) return DriverType.FIREFOX;
 		else if(browserName.equals("iexplorer")) return DriverType.INTERNETEXPLORER;
+		else if(browserName.equals("safari")) return DriverType.SAFARI;
 		else throw new RuntimeException("Browser Name Key value in Configuration.properties is not matched : " + browserName);
 	}
 

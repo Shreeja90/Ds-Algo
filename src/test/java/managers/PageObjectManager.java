@@ -2,6 +2,8 @@ package managers;
   
 import org.openqa.selenium.WebDriver;
 
+import Pages.Homepage;
+
 
 public class PageObjectManager {
  
@@ -11,7 +13,7 @@ public class PageObjectManager {
  
 	//private AddToCartPage addToCartPage;
  
-	//private HomePage homePage;
+	private Homepage homePage;
  
 	//private CheckOutPage checkoutPage;
 	
@@ -26,12 +28,11 @@ public class PageObjectManager {
 	}
  
 	
- 
-	//PageObjectManager. HomePage getHomePage(){
- 
-		//return (homePage == null) ? homePage = new HomePage(driver) : homePage;
- 
-	//}
+	public Homepage getHomePage(){
+
+		return (homePage == null) ? homePage = new Homepage(driver) : homePage;
+
+	}
  
 	
  

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import enums.DriverType;
 import enums.EnvironmentType;
@@ -17,8 +18,11 @@ public class WebDriverManager {
 	private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
  
 	public WebDriverManager() {
+		
 		driverType = FileReaderManager.getInstance().getConfigReader().getBrowser();
+		System.out.println(driverType);
 		environmentType = FileReaderManager.getInstance().getConfigReader().getEnvironment();
+		System.out.println(environmentType);
 	}
  
 	public WebDriver getDriver() {
@@ -47,6 +51,8 @@ public class WebDriverManager {
         case CHROME : 
         	System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath());
         	driver = new ChromeDriver();
+    		break;
+        case SAFARI : driver = new SafariDriver();
     		break;
         case INTERNETEXPLORER : driver = new InternetExplorerDriver();
     		break;

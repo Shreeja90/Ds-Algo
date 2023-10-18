@@ -5,5 +5,4 @@ public enum DriverType {
 	CHROME,
 	INTERNETEXPLORER,
 	SAFARI
-
 }
