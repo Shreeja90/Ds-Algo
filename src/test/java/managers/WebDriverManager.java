@@ -10,6 +10,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import enums.DriverType;
 import enums.EnvironmentType;
+import io.cucumber.java.After;
  
 public class WebDriverManager {
 	private WebDriver driver;
@@ -66,7 +67,7 @@ public class WebDriverManager {
  
 	public void closeDriver() {
 		driver.close();
-		driver.quit();
+		//driver.quit();
 	}	
  
 }

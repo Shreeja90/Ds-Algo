@@ -1,4 +1,4 @@
-package BDD_Framework.Dsalgo;
+package stepDefinition;
 
 import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 
@@ -19,11 +19,11 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/BDD_Framework/DSalgo",
-				glue= {"stepdefinition"},
+		features = "src/test/resources/BDD_Framework/DSalgo", tags = "@Smoke",
+				glue= {"stepDefinition"},
 				dryRun = false,
 				monochrome = true, 
-				plugin = {"pretty", "html:TestReports", "json:TestReports/cucumber.json", "junit:TestReports/cucumber.xml"})
+				plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json", "junit:target/cucumber.xml"})
 				
 
 public class RunCucumberTest {
